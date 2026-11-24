@@ -144,13 +144,14 @@ const homeLd = {
       { '@type': 'BreadcrumbList', itemListElement: [{ '@type': 'ListItem', position: 1, name: 'Início', item: SITE }, { '@type': 'ListItem', position: 2, name: p.crumb, item: url }] },
       { ...storeLd },
     ];
-    if (p.service) graph.push({ '@type': 'Service', name: p.service.name, serviceType: p.service.type, provider: { '@id': STORE_ID }, areaServed: storeLd.areaServed, url });
+    if (p.service && !p.private) graph.push({ '@type': 'Service', name: p.service.name, serviceType: p.service.type, provider: { '@id': STORE_ID }, areaServed: storeLd.areaServed, url });
     if (p.faq) graph.push({ '@type': 'FAQPage', mainEntity: FAQ.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })) });
-    const html = `${head({ t: p.title, d: p.desc, url, ld: { '@context': 'https://schema.org', '@graph': graph }, css: `<link rel="stylesheet" href="${subCss}">`, extra: `${icons}\n${preload.split('\n').filter((l) => /cardo|montserrat/.test(l)).join('\n')}` })}
+    let html = `${head({ t: p.title, d: p.desc, url, ld: { '@context': 'https://schema.org', '@graph': graph }, css: `<link rel="stylesheet" href="${subCss}">`, extra: `${icons}\n${preload.split('\n').filter((l) => /cardo|montserrat/.test(l)).join('\n')}` })}
 <body>
 ${p.html}
 </body>
 </html>`;
+    if (p.private) html = html.replace('content="index, follow, max-image-preview:large"', 'content="noindex, nofollow, noarchive"');
     mkdirSync('docs/' + p.path, { recursive: true });
     writeFileSync('docs/' + p.path + 'index.html', html);
   }
@@ -158,7 +159,7 @@ ${p.html}
   copyFileSync('assets-fonte/destino.jpg', 'docs/fachada-luzcor.jpg');
   copyFileSync('assets-fonte/logo-light.png', 'docs/logo-luzcor.png');
   copyFileSync('assets-fonte/favicon.png', 'docs/favicon.png');
-  const urls = [SITE, ...pages.map((p) => SITE + p.path)];
+  const urls = [SITE, ...pages.filter((p) => !p.private).map((p) => SITE + p.path)];
   writeFileSync('docs/robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${SITE}sitemap.xml\n`);
   writeFileSync('docs/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u, i) => `  <url><loc>${u}</loc><lastmod>2026-11-24</lastmod><priority>${i ? '0.8' : '1.0'}</priority></url>`).join('\n')}\n</urlset>\n`);
   writeFileSync('docs/llms.txt', `# Luzcor Iluminação
@@ -178,7 +179,7 @@ ${p.html}
 
 ## Páginas
 - [Início](${SITE})
-${pages.map((p) => `- [${p.title.split(' | ')[0]}](${SITE + p.path}): ${p.desc}`).join('\n')}
+${pages.filter((p) => !p.private).map((p) => `- [${p.title.split(' | ')[0]}](${SITE + p.path}): ${p.desc}`).join('\n')}
 
 ## Produtos
 ${PRODUCTS.map((p) => `- ${p.name}: ${p.text}`).join('\n')}

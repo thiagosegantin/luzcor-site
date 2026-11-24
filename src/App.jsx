@@ -208,10 +208,6 @@ function Partners() {
       <Block st="10" label="Parceria com arquitetos" id="arquitetos" more={['/parceria-com-arquitetos-telemaco-borba/', 'Conheça a parceria']} title={<span id="par-t">A Luzcor nasceu para <em>trabalhar com arquitetos.</em></span>}>
         <p className="lead">Muito do que fazemos, nem todo escritório sabe. Para o arquiteto parceiro:</p>
         <ul className="checks">{FOR_ARCH.map((x) => <li key={x}>{x}</li>)}</ul>
-        <p className="lead">
-          <strong>Novo:</strong> um showroom de luz técnica dentro do seu escritório, fabricado e instalado pela Luzcor,
-          sem custo. <a href="/showroom-de-luz-tecnica-no-seu-escritorio/">Saiba como pedir</a>.
-        </p>
         <a className="btn" href="/orcamento-iluminacao-para-arquitetos/">Envie seu projeto para orçamento</a>{' '}
         <a className="btn btn-line" href={wa('Olá! Sou arquiteto(a) e quero conhecer a parceria com a Luzcor.')} target="_blank" rel="noopener">Quero ser parceiro</a>
         <p className="note">
@@ -278,7 +274,6 @@ export const PAGES_NAV = [
   ['/consultoria-de-iluminacao-em-telemaco-borba/', 'Consultoria e projeto luminotécnico'],
   ['/parceria-com-arquitetos-telemaco-borba/', 'Parceria com arquitetos'],
   ['/orcamento-iluminacao-para-arquitetos/', 'Arquiteto: envie seu projeto'],
-  ['/showroom-de-luz-tecnica-no-seu-escritorio/', 'Showroom de luz técnica no seu escritório'],
   ['/perfil-de-led-sob-medida/', 'Perfil de LED sob medida'],
   ['/parceria-com-eletricista-em-telemaco-borba/', 'Parceria com eletricistas'],
   ['/iluminacao-ponta-grossa/', 'Atendimento em Ponta Grossa'],

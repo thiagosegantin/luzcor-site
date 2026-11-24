@@ -19,7 +19,6 @@ function Header() {
         <a href="/consultoria-de-iluminacao-em-telemaco-borba/">Consultoria</a>
         <a href="/parceria-com-arquitetos-telemaco-borba/">Arquitetos</a>
         <a href="/orcamento-iluminacao-para-arquitetos/">Envie seu projeto</a>
-        <a href="/showroom-de-luz-tecnica-no-seu-escritorio/">Showroom no escritório</a>
       </nav>
       <a className="p-wa" href={WA()} target="_blank" rel="noopener">WhatsApp</a>
     </header>
@@ -95,23 +94,6 @@ function EnvieProjeto({ origem }) {
 }
 
 const SHOWROOM_MSG = 'Olá, Luzcor! Sou arquiteto(a) e quero um showroom de luz técnica no meu escritório. Meu escritório fica em:';
-
-export function ShowroomChamada() {
-  return (
-    <section className="p-sec p-destaque" id="showroom-no-escritorio">
-      <p className="chap-label">Sem custo para o escritório</p>
-      <h2>Tenha um showroom de luz técnica dentro do seu escritório</h2>
-      <p>
-        A Luzcor fabrica e instala no seu escritório um expositor de luz técnica, para você mostrar ao cliente, ao vivo,
-        o efeito de cada luz antes de fechar o projeto. Modelo padrão ou personalizado para o seu espaço, sem custo.
-      </p>
-      <div className="p-cta">
-        <a className="btn" href={wa(SHOWROOM_MSG)} target="_blank" rel="noopener">Quero o showroom no meu escritório</a>
-        <a className="btn btn-line" href="/showroom-de-luz-tecnica-no-seu-escritorio/">Como funciona</a>
-      </div>
-    </section>
-  );
-}
 
 const List = ({ items }) => (
   <ul className="p-list">{items.map(([t, d]) => <li key={t}><strong>{t}</strong>{d && <span>{d}</span>}</li>)}</ul>
@@ -262,7 +244,6 @@ export const PAGES = [
         h1="Parceria com arquitetos em Telêmaco Borba e Ponta Grossa"
         lead="A Luzcor nasceu para trabalhar com arquitetos. Muito do que fazemos, nem todo escritório sabe: consultoria para você e para o seu cliente, projeto luminotécnico, peças sob medida e a parte elétrica da obra no mesmo pedido."
       >
-        <ShowroomChamada />
         <EnvieProjeto />
         <section className="p-sec">
           <h2>O que o escritório parceiro recebe</h2>
@@ -333,7 +314,6 @@ export const PAGES = [
         h1="Iluminação para arquitetos e obras de Ponta Grossa"
         lead="A Luzcor fica em Telêmaco Borba e atende projetos em Ponta Grossa e em todos os Campos Gerais. Para escritórios de arquitetura, somos um parceiro de iluminação completo: produtos, material elétrico, peças sob medida e consultoria."
       >
-        <ShowroomChamada />
         <EnvieProjeto origem="Meu escritório fica em Ponta Grossa." />
         <section className="p-sec">
           <h2>Por que arquitetos de Ponta Grossa trabalham com a Luzcor</h2>
@@ -401,7 +381,6 @@ export const PAGES = [
             <a href="/perfil-de-led-sob-medida/">perfil de LED sob medida</a>.
           </p>
         </section>
-        <ShowroomChamada />
       </Shell>
     ),
   },
@@ -442,6 +421,8 @@ export const PAGES = [
   },
   {
     path: 'showroom-de-luz-tecnica-no-seu-escritorio/',
+    // Página reservada: sem link no site, fora do sitemap e com noindex. Só é aberta por quem recebe o link.
+    private: true,
     crumb: 'Showroom no seu escritório',
     title: 'Showroom de luz técnica no seu escritório, sem custo | Luzcor',
     desc: 'Para arquitetos de Telêmaco Borba, Ponta Grossa e Campos Gerais: a Luzcor fabrica e instala um expositor de luz técnica no seu escritório, padrão ou personalizado, sem custo.',
@@ -493,8 +474,7 @@ export const PAGES = [
             <a className="btn btn-line" href={MAIL('Showroom de luz técnica no meu escritório')}>Pedir por e-mail</a>
           </div>
           <p>
-            Veja também como <a href="/orcamento-iluminacao-para-arquitetos/">enviar um projeto para orçamento</a> e a{' '}
-            <a href="/parceria-com-arquitetos-telemaco-borba/">parceria com arquitetos</a>.
+            Veja também como <a href="/orcamento-iluminacao-para-arquitetos/">enviar um projeto para orçamento</a>.
           </p>
         </section>
       </Shell>
