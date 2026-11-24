@@ -175,7 +175,7 @@ ${p.html}
 - Material elétrico: uma das poucas lojas de iluminação da região que também vende material elétrico
 - Ateliê: produz peças sob medida, como um perfil de LED de 5 metros inteiro ou um pendente no comprimento exato
 - Arquitetos: consultoria para o arquiteto e para o cliente do arquiteto, apresentação de projeto luminotécnico, soluções técnicas e condições especiais para parceiros, inclusive de Ponta Grossa
-- Eletricistas: condições especiais, treinamentos e indicação de clientes
+- Eletricistas: condições especiais e treinamentos
 
 ## Páginas
 - [Início](${SITE})

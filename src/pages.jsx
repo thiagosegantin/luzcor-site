@@ -272,7 +272,7 @@ export const PAGES = [
     path: 'parceria-com-eletricista-em-telemaco-borba/',
     crumb: 'Eletricistas',
     title: 'Parceria com eletricistas em Telêmaco Borba | Luzcor',
-    desc: 'Eletricistas parceiros da Luzcor têm condições especiais, orientação técnica, treinamentos e indicação de clientes, com iluminação e material elétrico.',
+    desc: 'Eletricistas parceiros da Luzcor têm condições especiais, orientação técnica e treinamentos, com iluminação e material elétrico na mesma loja.',
     service: { name: 'Parceria com eletricistas', type: 'Programa de parceria' },
     body: () => (
       <Shell
@@ -287,7 +287,6 @@ export const PAGES = [
             ['Condições especiais', 'Descontos exclusivos em produtos.'],
             ['Orientação técnica', 'Ajuda na escolha dos produtos certos para cada instalação.'],
             ['Treinamentos e workshops', 'Sobre novas tecnologias de iluminação e boas práticas.'],
-            ['Indicação de clientes', 'Quando um cliente da loja precisa de instalação, indicamos eletricistas parceiros.'],
           ]} />
         </section>
         <section className="p-sec">

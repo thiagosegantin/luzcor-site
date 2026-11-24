@@ -211,7 +211,7 @@ function Partners() {
         <a className="btn" href="/orcamento-iluminacao-para-arquitetos/">Envie seu projeto para orçamento</a>{' '}
         <a className="btn btn-line" href={wa('Olá! Sou arquiteto(a) e quero conhecer a parceria com a Luzcor.')} target="_blank" rel="noopener">Quero ser parceiro</a>
         <p className="note">
-          Eletricistas também têm condições especiais, treinamentos e indicação de clientes.{' '}
+          Eletricistas também têm condições especiais e treinamentos.{' '}
           <a href="/parceria-com-eletricista-em-telemaco-borba/">Parceria com eletricistas</a>
         </p>
       </Block>
