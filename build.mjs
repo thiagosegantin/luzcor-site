@@ -45,7 +45,7 @@ const storeLd = {
   address: { '@type': 'PostalAddress', streetAddress: ADDRESS.street, addressLocality: ADDRESS.city, addressRegion: ADDRESS.uf, postalCode: ADDRESS.cep, addressCountry: 'BR' },
   openingHoursSpecification: [
     { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '08:00', closes: '18:00' },
-    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday', opens: '09:00', closes: '13:00' },
+    { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday', opens: '08:00', closes: '13:00' },
   ],
   areaServed: [...CITIES.map((c) => ({ '@type': 'City', name: c.n + ', PR' })), { '@type': 'AdministrativeArea', name: 'Campos Gerais, Paraná' }],
   sameAs: [INSTAGRAM, PINTEREST],
@@ -164,7 +164,7 @@ ${p.html}
 
 - Endereço: ${ADDRESS.street}, ${ADDRESS.district}, ${ADDRESS.city} - ${ADDRESS.uf}, CEP ${ADDRESS.cep}
 - Telefone e WhatsApp: (42) 3273-1964
-- Horário: segunda a sexta, 8h às 18h; sábado, 9h às 13h
+- Horário: segunda a sexta, 8h às 18h; sábado, 8h às 13h
 - Instagram: @luzcor.tb
 - Região atendida: ${CITIES.map((c) => c.n).join(', ')} e Campos Gerais (PR)
 - Consultoria de iluminação: conduzida por Thiago Segantin, especialista em projetos luminotécnicos

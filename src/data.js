@@ -16,7 +16,7 @@ export const INSTAGRAM = 'https://www.instagram.com/luzcor.tb/';
 export const PINTEREST = 'https://br.pinterest.com/luzcortb/';
 export const HOURS = [
   ['Segunda a sexta', '8h às 18h'],
-  ['Sábado', '9h às 13h'],
+  ['Sábado', '8h às 13h'],
   ['Domingo', 'Fechado'],
 ];
 
@@ -85,7 +85,7 @@ export const TESTIMONIALS = [
 export const FAQ = [
   {
     q: 'Onde fica a Luzcor Iluminação?',
-    a: 'A Luzcor fica na Rua Professora Edith Gordan, 270, no Centro de Telêmaco Borba, Paraná (CEP 84261-230). O showroom abre de segunda a sexta, das 8h às 18h, e aos sábados, das 9h às 13h.',
+    a: 'A Luzcor fica na Rua Professora Edith Gordan, 270, no Centro de Telêmaco Borba, Paraná (CEP 84261-230). O showroom abre de segunda a sexta, das 8h às 18h, e aos sábados, das 8h às 13h.',
   },
   {
     q: 'A Luzcor atende Ponta Grossa e outras cidades dos Campos Gerais?',
