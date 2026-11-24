@@ -3,6 +3,7 @@
 import logoLight from '../assets-fonte/logo-light.png';
 import storeImg from '../assets-fonte/destino.jpg';
 import { Footer } from './App.jsx';
+import { Expositor } from './expositor.jsx';
 import { ADDRESS, CITIES, EMAIL, FAQ, HOURS, MAPS, PHONE_TXT, PHONE_TEL, ROOMS, SITE, wa } from './data.js';
 
 const WA = (m) => wa(m || 'Olá, Luzcor! Vim pelo site e gostaria de atendimento.');
@@ -425,59 +426,57 @@ export const PAGES = [
     private: true,
     crumb: 'Showroom no seu escritório',
     title: 'Showroom de luz técnica no seu escritório, sem custo | Luzcor',
-    desc: 'Para arquitetos de Telêmaco Borba, Ponta Grossa e Campos Gerais: a Luzcor fabrica e instala um expositor de luz técnica no seu escritório, padrão ou personalizado, sem custo.',
+    desc: 'Para arquitetos: a Luzcor fabrica e instala um expositor de luz técnica no seu escritório, padrão ou personalizado, sem custo.',
     service: { name: 'Showroom de luz técnica no escritório de arquitetura', type: 'Programa para arquitetos' },
     body: () => (
-      <Shell
-        crumb="Showroom no seu escritório"
-        kicker="Para escritórios de arquitetura · sem custo"
-        h1="Um showroom de luz técnica dentro do seu escritório"
-        lead="Seu cliente entende a luz quando vê a luz. A Luzcor fabrica e instala no seu escritório um expositor de luz técnica, para você apresentar o projeto com o efeito real na frente do cliente. Sem custo para o escritório."
-      >
-        <section className="p-sec">
-          <h2>Por que ter luz técnica no seu escritório</h2>
-          <List items={[
-            ['O cliente vê antes de decidir', 'Diferença entre luz quente e fria, facho aberto e fechado, luz de destaque e luz geral, ao vivo, na reunião.'],
-            ['Projeto aprovado com mais segurança', 'Menos dúvida do cliente, menos troca de peça depois da obra pronta.'],
-            ['Seu escritório se diferencia', 'Uma experiência que o cliente não tem em uma apresentação só com imagens.'],
-          ]} />
-        </section>
-        <section className="p-sec">
-          <h2>O expositor</h2>
-          <List items={[
-            ['Fabricado pela Luzcor', 'Produzido no nosso ateliê, com peças de luz técnica do nosso portfólio.'],
-            ['Padrão ou personalizado', 'Você escolhe o modelo padrão Luzcor ou um expositor pensado para o espaço e a identidade do seu escritório.'],
-            ['Sem custo', 'O escritório não paga pelo expositor nem pela instalação.'],
-          ]} />
-        </section>
-        <section className="p-sec">
-          <h2>Como funciona</h2>
-          <ol className="p-steps">
-            <li>Você pede o showroom pelo WhatsApp ou por e-mail.</li>
-            <li>Marcamos uma conversa para conhecer o seu escritório e o tipo de projeto que você faz.</li>
-            <li>Definimos juntos o modelo, padrão ou personalizado, e o lugar dele no escritório.</li>
-            <li>A Luzcor fabrica e instala.</li>
-          </ol>
-        </section>
-        <section className="p-sec">
-          <h2>O que pedimos em troca</h2>
-          <p>
-            Só uma coisa: que a Luzcor entre na sua lista de orçamentos. Quando tiver um projeto, mande para a gente orçar
-            a iluminação e o material elétrico. Você continua livre para fechar com quem quiser.
-          </p>
-          <p>
-            Os expositores são limitados e cada escritório passa por uma conversa antes. Atendemos escritórios de
-            arquitetura e design de interiores de Telêmaco Borba, Ponta Grossa e dos Campos Gerais.
-          </p>
-          <div className="p-cta">
-            <a className="btn" href={wa(SHOWROOM_MSG)} target="_blank" rel="noopener">Quero o showroom no meu escritório</a>
-            <a className="btn btn-line" href={MAIL('Showroom de luz técnica no meu escritório')}>Pedir por e-mail</a>
-          </div>
-          <p>
-            Veja também como <a href="/orcamento-iluminacao-para-arquitetos/">enviar um projeto para orçamento</a>.
-          </p>
-        </section>
-      </Shell>
+      <>
+        <Header />
+        <main className="sh">
+          <section className="sh-hero">
+            <div className="sh-copy">
+              <p className="chap-label">Convite para escritórios de arquitetura</p>
+              <h1>Um showroom de luz técnica <em>no seu escritório.</em></h1>
+              <p className="sh-lead">Fabricado e instalado pela Luzcor. <strong>Sem custo.</strong></p>
+              <a className="btn" href={wa(SHOWROOM_MSG)} target="_blank" rel="noopener">Quero no meu escritório</a>
+            </div>
+            <figure className="sh-fig">
+              <Expositor />
+              <figcaption>Expositor ilustrativo · 1 m × 2 m</figcaption>
+            </figure>
+          </section>
+
+          <section className="sh-cards" aria-label="Por que ter">
+            <div><span>01</span><h2>Seu cliente vê a luz</h2><p>Quente ou fria, destaque ou geral. Ao vivo, na reunião.</p></div>
+            <div><span>02</span><h2>Padrão ou do seu jeito</h2><p>Nosso modelo ou um personalizado para o seu espaço.</p></div>
+            <div><span>03</span><h2>Sem custo</h2><p>Você não paga o móvel nem a instalação.</p></div>
+          </section>
+
+          <section className="sh-steps" aria-labelledby="sh-como">
+            <h2 id="sh-como">Como funciona</h2>
+            <ol>
+              <li><b>1</b>Você pede</li>
+              <li><b>2</b>A gente conversa</li>
+              <li><b>3</b>Fabricamos</li>
+              <li><b>4</b>Instalamos</li>
+            </ol>
+          </section>
+
+          <section className="sh-deal">
+            <p className="chap-label">Em troca</p>
+            <p className="sh-deal-t">Só uma coisa: a Luzcor na sua lista de orçamentos.</p>
+            <p>Mande seus projetos para a gente orçar. Fechar é sempre escolha sua.</p>
+          </section>
+
+          <section className="sh-end">
+            <p className="sh-vagas">Vagas limitadas · Telêmaco Borba, Ponta Grossa e Campos Gerais</p>
+            <div className="p-cta">
+              <a className="btn" href={wa(SHOWROOM_MSG)} target="_blank" rel="noopener">Quero no meu escritório</a>
+              <a className="btn btn-line" href={MAIL('Showroom de luz técnica no meu escritório')}>Pedir por e-mail</a>
+            </div>
+          </section>
+        </main>
+        <Footer />
+      </>
     ),
   },
   {
