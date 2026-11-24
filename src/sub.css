@@ -51,6 +51,7 @@ h1, h2, p { margin: 0; font-weight: 400; }
 .p-visit img { border-radius: 4px; box-shadow: 0 30px 80px -30px rgba(253,194,12,.35); }
 .p-visit h2 { font: 400 clamp(28px, 3vw, 38px)/1.15 var(--serif); }
 .p-visit address { font-style: normal; margin-top: 14px; color: var(--ivory-2); }
+.p-rev { margin-top: 16px; font-size: 14.5px; }
 .p-cta { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
 .foot { background: #2a0c06; padding: 9vh 6vw 7vh; text-align: center; display: grid; justify-items: center; gap: 14px; border-top: 1px solid var(--line); }
 .foot img { width: 170px; height: auto; }

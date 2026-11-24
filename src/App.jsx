@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import logoLight from '../assets-fonte/logo-light.png';
 import {
-  ADDRESS, CITIES, COLLECTION, HOURS, INSTAGRAM, MAPS, PHONE_TEL, PHONE_TXT, PINTEREST, wa,
+  ADDRESS, CITIES, COLLECTION, HOURS, INSTAGRAM, MAPS, PHONE_TEL, PHONE_TXT, PINTEREST, REVIEWS, wa,
 } from './data.js';
 
 const WA_HELLO = 'Olá, Luzcor! Vim pelo site e gostaria de atendimento.';
@@ -81,6 +81,7 @@ function Hero() {
         <span className="t">Luz que <em>inspira.</em></span>
         <span className="s">Loja de iluminação e material elétrico em Telêmaco Borba, com peças sob medida, para Ponta Grossa e todos os Campos Gerais</span>
       </h1>
+      <p className="hero-hello">Da escolha de uma lâmpada ao projeto completo, a gente ajuda você a encontrar a luz certa.</p>
       <div className="hero-cta">
         <a className="btn" href="#colecao">Siga a luz</a>
         <a className="btn btn-line" href={wa(WA_HELLO)} target="_blank" rel="noopener">Falar com a Luzcor</a>
@@ -257,11 +258,14 @@ function Arrival() {
             <a href={'tel:' + PHONE_TEL}>{PHONE_TXT}</a>
             <span className="lbl gap">Redes</span>
             <a href={INSTAGRAM} target="_blank" rel="noopener">Instagram @luzcor.tb</a> · <a href={PINTEREST} target="_blank" rel="noopener">Pinterest</a>
+            <span className="lbl gap">Avaliações</span>
+            <a href={REVIEWS} target="_blank" rel="noopener">Ler no Google</a>
           </div>
         </address>
         <div className="visit-cta">
           <a className="btn" href={wa(WA_HELLO)} target="_blank" rel="noopener">Chamar no WhatsApp</a>
           <a className="btn btn-line" href={MAPS} target="_blank" rel="noopener">Como chegar</a>
+          <a className="btn btn-line" href={'tel:' + PHONE_TEL}>Ligar</a>
         </div>
       </div>
     </section>

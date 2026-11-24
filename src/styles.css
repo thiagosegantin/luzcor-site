@@ -87,6 +87,7 @@ main, .foot { position: relative; z-index: 2; }
 .hero-title .t { font: 400 clamp(64px, 10vw, 168px)/.92 var(--serif); letter-spacing: -.025em; text-shadow: 0 6px 40px rgba(20,4,2,.6); animation: born 2.2s .5s cubic-bezier(.2,.7,.2,1) both; }
 .hero-title .t em { background: linear-gradient(100deg, #c99a48 0%, #ffe6a6 40%, #fdc20c 55%, #c99a48 100%); background-size: 220% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: shine 7s 1.2s ease-in-out infinite; padding-right: .06em; }
 @keyframes shine { 0%, 100% { background-position: 100% 0; } 50% { background-position: 0 0; } }
+.hero-hello { margin-top: 26px; max-width: 34ch; font: italic 400 clamp(19px, 1.8vw, 24px)/1.4 var(--serif); color: var(--gold-soft); text-align: center; text-wrap: balance; animation: born 2s 1.2s both; }
 .hero-title .s { font: 500 12px/1.9 var(--sans); letter-spacing: .3em; text-transform: uppercase; color: var(--ivory-2); max-width: 52ch; animation: born 2s 1s both; }
 .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; margin-top: 44px; animation: born 2s 1.3s both; }
 .hero-cue { position: absolute; bottom: 4vh; left: 50%; translate: -50% 0; font: italic 400 17px/1 var(--serif); color: var(--ivory-2); animation: breathe 3.6s ease-in-out infinite; }

@@ -4,7 +4,7 @@ import logoLight from '../assets-fonte/logo-light.png';
 import storeImg from '../assets-fonte/destino.jpg';
 import { Footer } from './App.jsx';
 import { Expositor } from './expositor.jsx';
-import { ADDRESS, CITIES, EMAIL, FAQ, HOURS, MAPS, PHONE_TXT, PHONE_TEL, ROOMS, SITE, wa } from './data.js';
+import { ADDRESS, CITIES, EMAIL, FAQ, HOURS, MAPS, PHONE_TXT, PHONE_TEL, REVIEWS, ROOMS, SITE, wa } from './data.js';
 
 const WA = (m) => wa(m || 'Olá, Luzcor! Vim pelo site e gostaria de atendimento.');
 
@@ -42,7 +42,9 @@ function Visit() {
         <div className="p-cta">
           <a className="btn" href={WA()} target="_blank" rel="noopener">Chamar no WhatsApp</a>
           <a className="btn btn-line" href={MAPS} target="_blank" rel="noopener">Como chegar</a>
+          <a className="btn btn-line" href={'tel:' + PHONE_TEL}>Ligar</a>
         </div>
+        <p className="p-rev"><a href={REVIEWS} target="_blank" rel="noopener">Ver o que os clientes dizem no Google</a></p>
       </div>
     </section>
   );

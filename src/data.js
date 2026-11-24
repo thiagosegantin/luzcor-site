@@ -13,6 +13,7 @@ export const ADDRESS = {
 export const MAPS =
   'https://www.google.com/maps/search/?api=1&query=' +
   encodeURIComponent('Luzcor Iluminação, Rua Professora Edith Gordan, 270, Centro, Telêmaco Borba - PR');
+export const REVIEWS = 'https://www.google.com/maps/place/?q=place_id:ChIJFfarNg2D6ZQRhCiCjMN6bbM';
 export const INSTAGRAM = 'https://www.instagram.com/luzcor.tb/';
 export const PINTEREST = 'https://br.pinterest.com/luzcortb/';
 export const HOURS = [
