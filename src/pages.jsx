@@ -3,7 +3,7 @@
 import logoLight from '../assets-fonte/logo-light.png';
 import storeImg from '../assets-fonte/destino.jpg';
 import { Footer } from './App.jsx';
-import { ADDRESS, CITIES, FAQ, HOURS, MAPS, PHONE_TXT, PHONE_TEL, ROOMS, SITE, wa } from './data.js';
+import { ADDRESS, CITIES, EMAIL, FAQ, HOURS, MAPS, PHONE_TXT, PHONE_TEL, ROOMS, SITE, wa } from './data.js';
 
 const WA = (m) => wa(m || 'Olá, Luzcor! Vim pelo site e gostaria de atendimento.');
 
@@ -18,6 +18,7 @@ function Header() {
         <a href="/atelie-luminarias-sob-medida/">Ateliê</a>
         <a href="/consultoria-de-iluminacao-em-telemaco-borba/">Consultoria</a>
         <a href="/parceria-com-arquitetos-telemaco-borba/">Arquitetos</a>
+        <a href="/orcamento-iluminacao-para-arquitetos/">Envie seu projeto</a>
       </nav>
       <a className="p-wa" href={WA()} target="_blank" rel="noopener">WhatsApp</a>
     </header>
@@ -64,6 +65,31 @@ function Shell({ crumb, h1, kicker, lead, children }) {
       </main>
       <Footer />
     </>
+  );
+}
+
+const MAIL = (assunto) => `mailto:${EMAIL}?subject=${encodeURIComponent(assunto)}`;
+
+function EnvieProjeto({ origem }) {
+  const msg = 'Olá, Luzcor! Sou arquiteto(a) e quero enviar um projeto para orçamento.' + (origem ? ' ' + origem : '');
+  return (
+    <section className="p-sec" id="envie-seu-projeto">
+      <h2>Envie seu projeto para orçamento</h2>
+      <p>
+        Mande o projeto do seu cliente e a Luzcor devolve o orçamento completo da iluminação e do material elétrico
+        em até 2 dias úteis.
+      </p>
+      <List items={[
+        ['O que enviar', 'Planta luminotécnica, projeto em PDF ou DWG, ou uma lista de pontos e peças. Fotos e referências ajudam.'],
+        ['O que você recebe', 'Iluminação e material elétrico orçados juntos, com alternativas por faixa de preço.'],
+        ['Peças sob medida', 'Quando o projeto pede o que não existe pronto, o ateliê da Luzcor produz.'],
+        ['Prazo', 'Retorno em até 2 dias úteis.'],
+      ]} />
+      <div className="p-cta">
+        <a className="btn" href={wa(msg)} target="_blank" rel="noopener">Enviar projeto pelo WhatsApp</a>
+        <a className="btn btn-line" href={MAIL('Projeto para orçamento')}>Enviar por e-mail</a>
+      </div>
+    </section>
   );
 }
 
@@ -216,6 +242,7 @@ export const PAGES = [
         h1="Parceria com arquitetos em Telêmaco Borba e Ponta Grossa"
         lead="A Luzcor nasceu para trabalhar com arquitetos. Muito do que fazemos, nem todo escritório sabe: consultoria para você e para o seu cliente, projeto luminotécnico, peças sob medida e a parte elétrica da obra no mesmo pedido."
       >
+        <EnvieProjeto />
         <section className="p-sec">
           <h2>O que o escritório parceiro recebe</h2>
           <List items={[
@@ -285,6 +312,7 @@ export const PAGES = [
         h1="Iluminação para arquitetos e obras de Ponta Grossa"
         lead="A Luzcor fica em Telêmaco Borba e atende projetos em Ponta Grossa e em todos os Campos Gerais. Para escritórios de arquitetura, somos um parceiro de iluminação completo: produtos, material elétrico, peças sob medida e consultoria."
       >
+        <EnvieProjeto origem="Meu escritório fica em Ponta Grossa." />
         <section className="p-sec">
           <h2>Por que arquitetos de Ponta Grossa trabalham com a Luzcor</h2>
           <List items={[
@@ -301,8 +329,91 @@ export const PAGES = [
             peças de perto, o showroom fica no Centro de Telêmaco Borba. Também atendemos{' '}
             {CITIES.filter((c) => !c.main && !c.big).map((c) => c.n).join(', ')}.
           </p>
-          <a className="btn" href={WA('Olá, Luzcor! Sou de Ponta Grossa e quero conhecer a Luzcor.')} target="_blank" rel="noopener">Falar com a Luzcor</a>
+          <a className="btn" href={WA('Olá, Luzcor! Sou arquiteto(a) de Ponta Grossa e quero enviar um projeto para orçamento.')} target="_blank" rel="noopener">Enviar projeto para orçar</a>
         </section>
+      </Shell>
+    ),
+  },
+  {
+    path: 'orcamento-iluminacao-para-arquitetos/',
+    crumb: 'Envie seu projeto',
+    title: 'Orçamento de iluminação para arquitetos: envie seu projeto | Luzcor',
+    desc: 'Arquitetos de Telêmaco Borba, Ponta Grossa e Campos Gerais: envie o projeto e receba em até 2 dias úteis o orçamento da iluminação e do material elétrico juntos.',
+    service: { name: 'Orçamento de iluminação e material elétrico para projetos de arquitetura', type: 'Orçamento para arquitetos' },
+    body: () => (
+      <Shell
+        crumb="Envie seu projeto"
+        kicker="Para arquitetos"
+        h1="Envie seu projeto: a Luzcor orça a iluminação e a elétrica juntas"
+        lead="Para escritórios de Telêmaco Borba, Ponta Grossa e dos Campos Gerais. Você manda o projeto do cliente e recebe, num pedido só, o orçamento das luminárias, dos perfis e fitas de LED, dos drivers e do material elétrico."
+      >
+        <EnvieProjeto />
+        <section className="p-sec">
+          <h2>Por que orçar o projeto inteiro num fornecedor só</h2>
+          <List items={[
+            ['Um pedido, não cinco', 'Luminárias, perfis, fitas, drivers, fios, disjuntores, tomadas e interruptores no mesmo orçamento.'],
+            ['Conjunto que conversa', 'Fonte certa para cada fita, temperatura de cor coerente entre os ambientes e peças que combinam entre si.'],
+            ['Alternativas por faixa de preço', 'Para o seu cliente decidir com você, sem refazer o projeto.'],
+            ['O que não existe pronto', 'O ateliê da Luzcor produz peças sob medida, como perfis de LED de 5 metros inteiros.'],
+          ]} />
+        </section>
+        <section className="p-sec">
+          <h2>Como funciona</h2>
+          <ol className="p-steps">
+            <li>Você envia o projeto pelo WhatsApp ou por e-mail.</li>
+            <li>A Luzcor revisa e, se faltar alguma informação, fala com você antes de orçar.</li>
+            <li>Você recebe o orçamento em até 2 dias úteis.</li>
+            <li>Se o cliente quiser ver as peças de perto, o showroom fica no Centro de Telêmaco Borba.</li>
+          </ol>
+        </section>
+        <section className="p-sec">
+          <h2>O que ajuda a orçar mais rápido</h2>
+          <List items={[
+            ['Pontos de luz', 'Planta com a posição de cada ponto e o tipo de peça.'],
+            ['Especificação ou referência', 'Modelo, marca ou uma foto do efeito que você quer.'],
+            ['Temperatura de cor', 'A que o projeto pede em cada ambiente.'],
+            ['Medidas', 'Comprimento de sancas, nichos, marcenaria e perfis.'],
+          ]} />
+          <p>
+            Veja também a <a href="/parceria-com-arquitetos-telemaco-borba/">parceria com arquitetos</a> e o{' '}
+            <a href="/perfil-de-led-sob-medida/">perfil de LED sob medida</a>.
+          </p>
+        </section>
+      </Shell>
+    ),
+  },
+  {
+    path: 'perfil-de-led-sob-medida/',
+    crumb: 'Perfil de LED sob medida',
+    title: 'Perfil de LED sob medida para projetos de arquitetura | Luzcor',
+    desc: 'Perfis de LED no comprimento exato do projeto, como peças de 5 metros inteiros, produzidos pelo ateliê da Luzcor para arquitetos de Telêmaco Borba, Ponta Grossa e região.',
+    service: { name: 'Perfil de LED sob medida', type: 'Fabricação de luminárias sob medida' },
+    body: () => (
+      <Shell
+        crumb="Perfil de LED sob medida"
+        kicker="Ateliê Luzcor"
+        h1="Perfil de LED sob medida para o seu projeto"
+        lead="Quando o projeto pede uma linha de luz inteira de 5 metros, um comprimento fora do padrão ou um pendente linear no tamanho exato, o ateliê da Luzcor produz a peça."
+      >
+        <section className="p-sec">
+          <h2>O que especificar no projeto</h2>
+          <List items={[
+            ['Comprimento', 'A medida exata e se a peça deve ser inteira, sem emendas aparentes.'],
+            ['Instalação', 'Embutido no forro ou na marcenaria, de sobrepor ou pendente.'],
+            ['Temperatura de cor e IRC', 'O tom da luz em Kelvin e a fidelidade de cor que o ambiente pede.'],
+            ['Potência e driver', 'Watts por metro e onde a fonte vai ficar escondida.'],
+            ['Acabamento', 'Cor do perfil e tipo de difusor.'],
+          ]} />
+        </section>
+        <section className="p-sec">
+          <h2>Por que sob medida</h2>
+          <p>
+            Perfil cortado e emendado na obra deixa marcas na linha de luz. Feito no comprimento certo, a peça chega
+            pronta para instalar e o efeito do projeto aparece como foi desenhado. Veja mais sobre o{' '}
+            <a href="/atelie-luminarias-sob-medida/">ateliê de luminárias sob medida</a>.
+          </p>
+        </section>
+        <EnvieProjeto origem="O projeto tem perfil de LED sob medida." />
       </Shell>
     ),
   },

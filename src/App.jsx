@@ -208,7 +208,8 @@ function Partners() {
       <Block st="10" label="Parceria com arquitetos" id="arquitetos" more={['/parceria-com-arquitetos-telemaco-borba/', 'Conheça a parceria']} title={<span id="par-t">A Luzcor nasceu para <em>trabalhar com arquitetos.</em></span>}>
         <p className="lead">Muito do que fazemos, nem todo escritório sabe. Para o arquiteto parceiro:</p>
         <ul className="checks">{FOR_ARCH.map((x) => <li key={x}>{x}</li>)}</ul>
-        <a className="btn" href={wa('Olá! Sou arquiteto(a) e quero conhecer a parceria com a Luzcor.')} target="_blank" rel="noopener">Quero ser parceiro</a>
+        <a className="btn" href="/orcamento-iluminacao-para-arquitetos/">Envie seu projeto para orçamento</a>{' '}
+        <a className="btn btn-line" href={wa('Olá! Sou arquiteto(a) e quero conhecer a parceria com a Luzcor.')} target="_blank" rel="noopener">Quero ser parceiro</a>
         <p className="note">
           Eletricistas também têm condições especiais, treinamentos e indicação de clientes.{' '}
           <a href="/parceria-com-eletricista-em-telemaco-borba/">Parceria com eletricistas</a>
@@ -226,7 +227,7 @@ function Region() {
           Atendemos projetos em Ponta Grossa, Castro, Carambeí, Tibagi, Imbaú, Reserva, Ortigueira, Curiúva, Ventania
           e em todos os Campos Gerais. A conversa começa pelo WhatsApp e continua no showroom, em Telêmaco Borba.
         </p>
-        <a className="btn" href={wa('Olá, Luzcor! Sou arquiteto(a) de outra cidade e quero conhecer a Luzcor. Minha cidade:')} target="_blank" rel="noopener">Sou arquiteto(a) de outra cidade</a>
+        <a className="btn" href={wa('Olá, Luzcor! Sou arquiteto(a) de outra cidade e quero enviar um projeto para orçamento. Minha cidade:')} target="_blank" rel="noopener">Enviar projeto para orçar</a>
       </Block>
     </section>
   );
@@ -272,6 +273,8 @@ export const PAGES_NAV = [
   ['/atelie-luminarias-sob-medida/', 'Luminárias sob medida'],
   ['/consultoria-de-iluminacao-em-telemaco-borba/', 'Consultoria e projeto luminotécnico'],
   ['/parceria-com-arquitetos-telemaco-borba/', 'Parceria com arquitetos'],
+  ['/orcamento-iluminacao-para-arquitetos/', 'Arquiteto: envie seu projeto'],
+  ['/perfil-de-led-sob-medida/', 'Perfil de LED sob medida'],
   ['/parceria-com-eletricista-em-telemaco-borba/', 'Parceria com eletricistas'],
   ['/iluminacao-ponta-grossa/', 'Atendimento em Ponta Grossa'],
   ['/perguntas-frequentes/', 'Perguntas frequentes'],

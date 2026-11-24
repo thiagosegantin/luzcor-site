@@ -2,7 +2,7 @@
 //  - dist/index.html: página inicial em arquivo único (prévia publicada como artefato)
 //  - docs/: o site para o domínio, com páginas internas e arquivos separados (melhor cache e velocidade)
 import { build } from 'esbuild';
-import { readFileSync, writeFileSync, mkdirSync, rmSync, copyFileSync } from 'node:fs';
+import { readFileSync, writeFileSync, mkdirSync, rmSync, copyFileSync, readdirSync } from 'node:fs';
 import { createRequire } from 'node:module';
 import { FAQ, PRODUCTS, CITIES, ADDRESS, SITE, INSTAGRAM, PINTEREST, PHONE_TEL, MAPS } from './src/data.js';
 
@@ -160,7 +160,7 @@ ${p.html}
   copyFileSync('assets-fonte/favicon.png', 'docs/favicon.png');
   const urls = [SITE, ...pages.map((p) => SITE + p.path)];
   writeFileSync('docs/robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${SITE}sitemap.xml\n`);
-  writeFileSync('docs/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u, i) => `  <url><loc>${u}</loc><lastmod>2026-11-20</lastmod><priority>${i ? '0.8' : '1.0'}</priority></url>`).join('\n')}\n</urlset>\n`);
+  writeFileSync('docs/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u, i) => `  <url><loc>${u}</loc><lastmod>2026-11-24</lastmod><priority>${i ? '0.8' : '1.0'}</priority></url>`).join('\n')}\n</urlset>\n`);
   writeFileSync('docs/llms.txt', `# Luzcor Iluminação
 
 > Loja de iluminação e material elétrico em Telêmaco Borba, Paraná, que atende Ponta Grossa e toda a região dos Campos Gerais. Tem produtos do essencial ao exclusivo, um ateliê que produz luminárias sob medida e consultoria de iluminação para arquitetos e seus clientes.
@@ -193,4 +193,6 @@ rmSync('dist/tmp-a', { recursive: true, force: true });
 rmSync('dist/tmp-b', { recursive: true, force: true });
 rmSync('dist/c', { recursive: true, force: true });
 writeFileSync('docs/CNAME', 'www.luzcor.com.br\n');
+mkdirSync('docs/midia', { recursive: true });
+for (const f of readdirSync('assets-fonte/midia')) copyFileSync('assets-fonte/midia/' + f, 'docs/midia/' + f);
 writeFileSync('docs/.nojekyll', '');

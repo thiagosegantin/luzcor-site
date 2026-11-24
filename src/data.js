@@ -1,5 +1,6 @@
 export const SITE = 'https://www.luzcor.com.br/';
 export const WHATS = '554232731964';
+export const EMAIL = 'luzcortb@gmail.com';
 export const PHONE_TXT = '(42) 3273-1964';
 export const PHONE_TEL = '+554232731964';
 export const ADDRESS = {
@@ -83,6 +84,10 @@ export const TESTIMONIALS = [
 ];
 
 export const FAQ = [
+  {
+    q: 'Sou arquiteto(a). Como envio um projeto para a Luzcor orçar?',
+    a: 'Envie o projeto pelo WhatsApp (42) 3273-1964 ou pelo e-mail luzcortb@gmail.com: planta luminotécnica, PDF, DWG ou uma lista de pontos e peças. A Luzcor devolve em até 2 dias úteis o orçamento da iluminação e do material elétrico juntos, com alternativas por faixa de preço e peças sob medida do ateliê quando o projeto pedir. Atendemos escritórios de Telêmaco Borba, Ponta Grossa e de todos os Campos Gerais.',
+  },
   {
     q: 'Onde fica a Luzcor Iluminação?',
     a: 'A Luzcor fica na Rua Professora Edith Gordan, 270, no Centro de Telêmaco Borba, Paraná (CEP 84261-230). O showroom abre de segunda a sexta, das 8h às 18h, e aos sábados, das 8h às 13h.',
