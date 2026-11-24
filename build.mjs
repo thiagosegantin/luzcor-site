@@ -80,6 +80,8 @@ const head = ({ t, d, url, ld, css, extra = '' }) => `<!DOCTYPE html>
 ${extra}
 <script type="application/ld+json">${JSON.stringify(ld).replace(/</g, '\\u003c')}</script>
 ${css}
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-K1ESEMBD6X"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-K1ESEMBD6X');document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href*="wa.me"]');if(a){gtag('event','whatsapp_click',{link_url:a.href,page_path:location.pathname});}var t=e.target.closest&&e.target.closest('a[href^="tel:"]');if(t){gtag('event','phone_click',{page_path:location.pathname});}},true);</script>
 </head>`;
 
 const homeLd = {
