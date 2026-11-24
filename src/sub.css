@@ -28,6 +28,8 @@ h1, h2, p { margin: 0; font-weight: 400; }
 .p-sec h2 { font: 400 clamp(28px, 3vw, 38px)/1.15 var(--serif); margin-bottom: 18px; }
 .p-sec p { color: var(--ivory-2); max-width: 66ch; }
 .p-sec .btn { margin-top: 26px; }
+.p-destaque { margin: 2vh 0 4vh; padding: 5vh 4vw; border: 1px solid rgba(253,194,12,.45); border-radius: 18px; background: rgba(253,194,12,.06); }
+.p-destaque h2 { margin-top: 12px; }
 .p-list { list-style: none; padding: 0; margin: 0; }
 .p-list li { display: grid; gap: 2px; padding: 14px 0; border-top: 1px solid var(--line); }
 .p-list li:first-child { border-top: 0; }
