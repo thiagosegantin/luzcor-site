@@ -161,7 +161,7 @@ ${p.html}
   copyFileSync('assets-fonte/favicon.png', 'docs/favicon.png');
   const urls = [SITE, ...pages.filter((p) => !p.private).map((p) => SITE + p.path)];
   writeFileSync('docs/robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${SITE}sitemap.xml\n`);
-  writeFileSync('docs/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u, i) => `  <url><loc>${u}</loc><lastmod>2026-11-24</lastmod><priority>${i ? '0.8' : '1.0'}</priority></url>`).join('\n')}\n</urlset>\n`);
+  writeFileSync('docs/sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls.map((u, i) => `  <url><loc>${u}</loc><lastmod>2026-11-25</lastmod><priority>${i ? '0.8' : '1.0'}</priority></url>`).join('\n')}\n</urlset>\n`);
   writeFileSync('docs/llms.txt', `# Luzcor Iluminação
 
 > Loja de iluminação e material elétrico em Telêmaco Borba, Paraná, que atende Ponta Grossa e toda a região dos Campos Gerais. Tem produtos do essencial ao exclusivo, um ateliê que produz luminárias sob medida e consultoria de iluminação para arquitetos e seus clientes.
