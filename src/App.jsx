@@ -225,8 +225,9 @@ function Region() {
     <section className="stage region" aria-labelledby="reg-t">
       <Block st="11" label="Ponta Grossa e Campos Gerais" id="regiao" more={['/iluminacao-ponta-grossa/', 'Atendimento em Ponta Grossa']} title={<span id="reg-t">Arquitetos de Ponta Grossa, <em>a Luzcor também é para vocês.</em></span>}>
         <p className="lead">
-          Atendemos projetos em Ponta Grossa, Castro, Carambeí, Tibagi, Imbaú, Reserva, Ortigueira, Curiúva, Ventania
-          e em todos os Campos Gerais. A conversa começa pelo WhatsApp e continua no showroom, em Telêmaco Borba.
+          Atendemos projetos em Ponta Grossa, Castro, Carambeí, Tibagi, Imbaú, Reserva, Ortigueira, Curiúva, Ventania,
+          Curitiba e em todos os Campos Gerais. Orçamento, pagamento e entrega na obra se resolvem à distância, pelo
+          WhatsApp, com frete grátis acima de um valor mínimo.
         </p>
         <a className="btn" href={wa('Olá, Luzcor! Sou arquiteto(a) de outra cidade e quero enviar um projeto para orçamento. Minha cidade:')} target="_blank" rel="noopener">Enviar projeto para orçar</a>
       </Block>

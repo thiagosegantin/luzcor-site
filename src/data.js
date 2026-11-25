@@ -90,6 +90,10 @@ export const FAQ = [
     a: 'Envie o projeto pelo WhatsApp (42) 3273-1964 ou pelo e-mail luzcortb@gmail.com: planta luminotécnica, PDF, DWG ou uma lista de pontos e peças. A Luzcor devolve em até 2 dias úteis o orçamento da iluminação e do material elétrico juntos, com alternativas por faixa de preço e peças sob medida do ateliê quando o projeto pedir. Atendemos escritórios de Telêmaco Borba, Ponta Grossa e de todos os Campos Gerais.',
   },
   {
+    q: 'A Luzcor entrega em Ponta Grossa e em outras cidades?',
+    a: 'Sim. A Luzcor entrega na obra em Ponta Grossa, Castro, Carambeí, Tibagi, Imbaú, Reserva, Curiúva, Ortigueira, Ventania, Curitiba e em toda a região, quantas vezes a obra precisar. Orçamento, aprovação, pagamento e entrega se resolvem à distância, pelo WhatsApp (42) 3273-1964, sem precisar ir à loja. O frete é grátis para pedidos acima de um valor mínimo, informado no orçamento.',
+  },
+  {
     q: 'Onde fica a Luzcor Iluminação?',
     a: 'A Luzcor fica na Rua Professora Edith Gordan, 270, no Centro de Telêmaco Borba, Paraná (CEP 84261-230). O showroom abre de segunda a sexta, das 8h às 18h, e aos sábados, das 8h às 13h.',
   },

@@ -98,6 +98,21 @@ function EnvieProjeto({ origem }) {
 
 const SHOWROOM_MSG = 'Olá, Luzcor! Sou arquiteto(a) e quero um showroom de luz técnica no meu escritório. Meu escritório fica em:';
 
+function AtendemosSuaObra() {
+  return (
+    <section className="p-sec" id="entrega">
+      <h2>Sua obra atendida sem sair da sua cidade</h2>
+      <List items={[
+        ['Tudo à distância', 'Orçamento, aprovação, pagamento e entrega resolvidos pelo WhatsApp. Não é preciso vir à loja.'],
+        ['Entrega na obra', 'Quantas vezes a obra precisar, sem esperar dia fixo.'],
+        ['Frete grátis', 'Para pedidos acima de um valor mínimo, informado no orçamento.'],
+        ['Onde entregamos', 'Ponta Grossa, Castro, Carambeí, Tibagi, Imbaú, Reserva, Curiúva, Ortigueira, Ventania, Curitiba e toda a região.'],
+      ]} />
+      <p>Quer ver as peças de perto? O showroom fica no Centro de Telêmaco Borba.</p>
+    </section>
+  );
+}
+
 const List = ({ items }) => (
   <ul className="p-list">{items.map(([t, d]) => <li key={t}><strong>{t}</strong>{d && <span>{d}</span>}</li>)}</ul>
 );
@@ -307,7 +322,7 @@ export const PAGES = [
     path: 'iluminacao-ponta-grossa/',
     crumb: 'Ponta Grossa',
     title: 'Loja de iluminação para Ponta Grossa e Campos Gerais | Luzcor',
-    desc: 'Arquitetos e obras de Ponta Grossa contam com a Luzcor: luminárias, material elétrico, peças sob medida e consultoria de iluminação.',
+    desc: 'Arquitetos e obras de Ponta Grossa contam com a Luzcor: luminárias, material elétrico e peças sob medida, com atendimento à distância e entrega na obra.',
     service: { name: 'Iluminação para projetos em Ponta Grossa e Campos Gerais', type: 'Venda de iluminação e consultoria' },
     body: () => (
       <Shell
@@ -317,6 +332,7 @@ export const PAGES = [
         lead="A Luzcor fica em Telêmaco Borba e atende projetos em Ponta Grossa e em todos os Campos Gerais. Para escritórios de arquitetura, somos um parceiro de iluminação completo: produtos, material elétrico, peças sob medida e consultoria."
       >
         <EnvieProjeto origem="Meu escritório fica em Ponta Grossa." />
+        <AtendemosSuaObra />
         <section className="p-sec">
           <h2>Por que arquitetos de Ponta Grossa trabalham com a Luzcor</h2>
           <List items={[
@@ -329,11 +345,13 @@ export const PAGES = [
         <section className="p-sec">
           <h2>Como funciona o atendimento</h2>
           <p>
-            O primeiro contato é pelo WhatsApp: você envia o projeto ou a necessidade e a gente orienta. Para escolher as
-            peças de perto, o showroom fica no Centro de Telêmaco Borba. Também atendemos{' '}
-            {CITIES.filter((c) => !c.main && !c.big).map((c) => c.n).join(', ')}.
+            O primeiro contato é pelo WhatsApp: você envia o projeto, a lista ou a foto do que precisa e a gente orienta.
+            Atendemos escritórios de arquitetura, lojas, construtoras e também quem está reformando a própria casa.
           </p>
-          <a className="btn" href={WA('Olá, Luzcor! Sou arquiteto(a) de Ponta Grossa e quero enviar um projeto para orçamento.')} target="_blank" rel="noopener">Enviar projeto para orçar</a>
+          <div className="p-cta">
+            <a className="btn" href={WA('Olá, Luzcor! Sou arquiteto(a) de Ponta Grossa e quero enviar um projeto para orçamento.')} target="_blank" rel="noopener">Sou arquiteto(a): enviar projeto</a>
+            <a className="btn btn-line" href={WA('Olá, Luzcor! Sou de Ponta Grossa e quero um orçamento de iluminação para a minha casa, loja ou obra.')} target="_blank" rel="noopener">Orçar para minha casa, loja ou obra</a>
+          </div>
         </section>
       </Shell>
     ),
@@ -352,6 +370,7 @@ export const PAGES = [
         lead="Para escritórios de Telêmaco Borba, Ponta Grossa e dos Campos Gerais. Você manda o projeto do cliente e recebe, num pedido só, o orçamento das luminárias, dos perfis e fitas de LED, dos drivers e do material elétrico."
       >
         <EnvieProjeto />
+        <AtendemosSuaObra />
         <section className="p-sec">
           <h2>Por que orçar o projeto inteiro num fornecedor só</h2>
           <List items={[
@@ -367,7 +386,7 @@ export const PAGES = [
             <li>Você envia o projeto pelo WhatsApp ou por e-mail.</li>
             <li>A Luzcor revisa e, se faltar alguma informação, fala com você antes de orçar.</li>
             <li>Você recebe o orçamento em até 2 dias úteis.</li>
-            <li>Se o cliente quiser ver as peças de perto, o showroom fica no Centro de Telêmaco Borba.</li>
+            <li>Aprovado, o pagamento e a entrega na obra também se resolvem à distância.</li>
           </ol>
         </section>
         <section className="p-sec">
